@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { percentages, repetitions } from "../utils/data";
 
 interface ICalculateTrainingWeek {

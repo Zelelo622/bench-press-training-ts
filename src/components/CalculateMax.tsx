@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import { FC, useState } from "react";
 
 interface ICalculateMaxProps {
   weight: string;
@@ -37,7 +37,7 @@ const CalculateMax: FC<ICalculateMaxProps> = ({
     <section className="calcMax">
       <div className="container">
         <div className="calcMax__inner">
-          <h2 className="calcMax__title">Рассчет одноповторного максимума</h2>
+          <h2 className="calcMax__title">Расчет одноповторного максимума</h2>
           <form onSubmit={calculateMaxes} className="calcMax__form">
             <div className="calcMax__form-wrap">
               <label className="calcMax__label" htmlFor="weight">
@@ -57,7 +57,7 @@ const CalculateMax: FC<ICalculateMaxProps> = ({
             </div>
             <div className="calcMax__form-wrap calcMax__form-wrapLast">
               <label className="calcMax__label" htmlFor="reps">
-                Количестов повторов:
+                Количество повторов:
               </label>
               <input
                 className="calcMax__input"

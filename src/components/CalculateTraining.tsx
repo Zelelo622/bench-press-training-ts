@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import { FC, useState } from "react";
 import CalculateTrainingWeek from "./CalculateTrainingWeek";
 import { percentages } from "../utils/data";
 
