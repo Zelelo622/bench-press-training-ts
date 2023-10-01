@@ -32,11 +32,95 @@
   font-weight: 400;
 }
 
+/* auth */
+
+.link-back {
+  color: #757575;
+  transition: all 0.2s;
+}
+.link-back:hover {
+  opacity: 0.7;
+}
+
+.registration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+}
+
+.registration__card {
+  padding: 16px 20px 12px;
+  border: 1px solid #c4c4c4;
+  width: 600px;
+}
+
+.registration__title {
+  font-weight: 700;
+  font-size: 30px;
+  padding-bottom: 16px;
+  text-align: center;
+}
+
+.registration__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.registration__inputWrap {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.registration__input + .registration__input {
+  margin-top: 10px;
+}
+.registration__input {
+  font-size: 16px;
+  max-width: 100%;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 1px solid #c4c4c4;
+  outline: none;
+}
+
+.registration__input-forgot {
+  margin-bottom: 20px;
+}
+
+.registration__rowWrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.registration__row {
+  font-size: 18px;
+  padding-bottom: 4px;
+}
+
+.registration__link {
+  color: #0969da;
+  transition: all 0.2s;
+}
+
+.registration__btn {
+}
+
+.btnForgotWrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.registration__btn-forgot {
+}
+
+/* plan training */
+
 .title {
   text-align: center;
   font-size: 50px;
   font-weight: 700;
-  margin-top: 30px;
   margin-bottom: 32px;
 }
 
@@ -90,7 +174,7 @@
 .calcMax__btn {
   font-size: 18px;
   font-weight: 500;
-  overflow-x: auto; /* Добавляем горизонтальный скролл на маленьких экранах */
+  overflow-x: auto;
   max-width: 100%;
 }
 
@@ -187,6 +271,8 @@ th {
   font-size: 16px;
   font-weight: 300;
 }
+
+/* media */
 
 @media screen and (max-width: 620px) {
   .container {

@@ -1,8 +1,9 @@
 import { sendPasswordResetEmail } from "firebase/auth";
 import { FC, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { auth } from "../config/FirebaseConfig";
 import { HOME_ROUTE } from "../utils/consts";
+import { Button } from "@mui/material";
 
 const ForgotPassPage: FC = () => {
   const [email, setEmail] = useState("");
@@ -22,19 +23,34 @@ const ForgotPassPage: FC = () => {
   };
 
   return (
-    <div className="resetPass">
+    <div className="registration">
       <div className="container">
-        <div className="resetPass__inner">
-          <h1 className="resetPass__title">Восстановление пароля</h1>
-          <form onSubmit={(e) => handleSubmit(e)} className="resetPass__form">
+        <div className="registration__card">
+          <NavLink to={HOME_ROUTE} className="link-back">
+            Назад
+          </NavLink>
+          <div className="registration__title">Восстановление пароля</div>
+          <form
+            onSubmit={(e) => handleSubmit(e)}
+            className="registration__form"
+          >
             <input
               type="email"
               name="email"
-              className="resetPass__input"
+              className="registration__input registration__input-forgot"
+              placeholder="Введите ваш email..."
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <button className="resetPass__btn">Сбросить</button>
+            <div className="btnForgotWrapper">
+              <Button
+                variant="contained"
+                color="success"
+                className="registration__btn registration__btn-forgot"
+              >
+                Сбросить
+              </Button>
+            </div>
           </form>
         </div>
       </div>

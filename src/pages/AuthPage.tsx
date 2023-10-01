@@ -5,9 +5,15 @@ import {
 import { FC, useContext, useState } from "react";
 import { auth } from "../config/FirebaseConfig";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import { HOME_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, RESET_PASS_ROUTE } from "../utils/consts";
+import {
+  HOME_ROUTE,
+  LOGIN_ROUTE,
+  REGISTRATION_ROUTE,
+  RESET_PASS_ROUTE,
+} from "../utils/consts";
 import { observer } from "mobx-react-lite";
 import { AppContext } from "..";
+import { Button } from "@mui/material";
 
 const AuthPage: FC = observer(() => {
   const { user } = useContext(AppContext);
@@ -46,45 +52,67 @@ const AuthPage: FC = observer(() => {
     <div className="registration">
       <div className="container">
         <div className="registration__card">
-          <h2 className="registration__title">
+          <NavLink to={HOME_ROUTE} className="link-back">Назад</NavLink>
+          <div className="registration__title">
             {isLogin ? "Авторизация" : "Регистрация"}
-          </h2>
+          </div>
           <form
             onSubmit={(e) => handleSubmit(e)}
             className="registration__form"
           >
-            <input
-              className="registration__input"
-              placeholder="Введите ваш email..."
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              className="registration__input"
-              placeholder="Введите ваш пароль..."
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <div className="registration__row">
+            <div className="registration__inputWrap">
+              <input
+                className="registration__input"
+                placeholder="Введите ваш email..."
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                className="registration__input"
+                placeholder="Введите ваш пароль..."
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+            <div className="registration__rowWrap">
               {isLogin ? (
-                <>
-                  <div>
-                    Нет аккаунта?{" "}
-                    <NavLink to={REGISTRATION_ROUTE}>Зарегистрируйся!</NavLink>
-                  </div>
-                  <div>
-                    Забыли пароль?{" "}
-                    <NavLink to={RESET_PASS_ROUTE}>Восстановить</NavLink>
-                  </div>
-                </>
-              ) : (
                 <div>
-                  Есть аккаунт? <NavLink to={LOGIN_ROUTE}>Войдите!</NavLink>
+                  <div className="registration__row">
+                    Нет аккаунта?{" "}
+                    <NavLink
+                      className="registration__link"
+                      to={REGISTRATION_ROUTE}
+                    >
+                      Зарегистрируйся!
+                    </NavLink>
+                  </div>
+                  <div className="registration__row">
+                    Забыли пароль?{" "}
+                    <NavLink
+                      className="registration__link"
+                      to={RESET_PASS_ROUTE}
+                    >
+                      Восстановить
+                    </NavLink>
+                  </div>
+                </div>
+              ) : (
+                <div className="registration__row">
+                  Есть аккаунт?{" "}
+                  <NavLink className="registration__link" to={LOGIN_ROUTE}>
+                    Войдите!
+                  </NavLink>
                 </div>
               )}
-              <button>{isLogin ? "Войти" : "Регистрация"}</button>
+              <Button
+                variant="outlined"
+                color="success"
+                className="registration__btn"
+              >
+                {isLogin ? "Войти" : "Регистрация"}
+              </Button>
             </div>
           </form>
         </div>
