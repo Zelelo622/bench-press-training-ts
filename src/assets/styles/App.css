@@ -37,6 +37,8 @@
 .link-back {
   color: #757575;
   transition: all 0.2s;
+  display: inline-block;
+  margin-bottom: 4px;
 }
 .link-back:hover {
   opacity: 0.7;
@@ -46,7 +48,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 100px;
+  padding: 100px 0;
 }
 
 .registration__card {
@@ -58,7 +60,7 @@
 .registration__title {
   font-weight: 700;
   font-size: 30px;
-  padding-bottom: 16px;
+  margin-bottom: 16px;
   text-align: center;
 }
 
@@ -274,6 +276,17 @@ th {
 
 /* media */
 
+@media screen and (max-width: 750px) {
+  .registration {
+    display: block;
+  }
+
+  .registration__card {
+    width: auto;
+    max-width: 100%;
+  }
+}
+
 @media screen and (max-width: 620px) {
   .container {
     padding: 0 10px;
@@ -348,3 +361,32 @@ th {
     flex-direction: column;
   }
 }
+
+@media screen and (max-width: 380px) {
+  .registration__title {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .registration__input {
+    font-size: 14px;
+  }
+
+  .registration__input-forgot {
+    margin-bottom: 6px;
+  }
+
+  .registration__rowWrap {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .registration__row {
+    font-size: 16px;
+  }
+
+  .btnForgotWrapper {
+    flex-flow: column;
+  }
+}
+

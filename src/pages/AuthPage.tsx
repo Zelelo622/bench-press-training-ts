@@ -52,7 +52,7 @@ const AuthPage: FC = observer(() => {
     <div className="registration">
       <div className="container">
         <div className="registration__card">
-          <NavLink to={HOME_ROUTE} className="link-back">Назад</NavLink>
+          <NavLink to={HOME_ROUTE} className="link-back">Главная</NavLink>
           <div className="registration__title">
             {isLogin ? "Авторизация" : "Регистрация"}
           </div>

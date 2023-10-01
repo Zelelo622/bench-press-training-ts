@@ -27,7 +27,7 @@ const ForgotPassPage: FC = () => {
       <div className="container">
         <div className="registration__card">
           <NavLink to={HOME_ROUTE} className="link-back">
-            Назад
+            Главная
           </NavLink>
           <div className="registration__title">Восстановление пароля</div>
           <form
