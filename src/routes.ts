@@ -1,6 +1,12 @@
 import HomePage from "./pages/HomePage";
 import AuthPage from "./pages/AuthPage";
-import { HOME_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE } from "./utils/consts";
+import ForgotPassPage from "./pages/ForgotPassPage";
+import {
+  HOME_ROUTE,
+  LOGIN_ROUTE,
+  REGISTRATION_ROUTE,
+  RESET_PASS_ROUTE,
+} from "./utils/consts";
 
 interface IRoute {
   path: string;
@@ -19,5 +25,9 @@ export const publicRoutes: IRoute[] = [
   {
     path: LOGIN_ROUTE,
     Component: AuthPage,
+  },
+  {
+    path: RESET_PASS_ROUTE,
+    Component: ForgotPassPage,
   },
 ];

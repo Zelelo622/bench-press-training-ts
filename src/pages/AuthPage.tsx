@@ -5,7 +5,7 @@ import {
 import { FC, useContext, useState } from "react";
 import { auth } from "../config/FirebaseConfig";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import { HOME_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE } from "../utils/consts";
+import { HOME_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, RESET_PASS_ROUTE } from "../utils/consts";
 import { observer } from "mobx-react-lite";
 import { AppContext } from "..";
 
@@ -69,10 +69,16 @@ const AuthPage: FC = observer(() => {
             />
             <div className="registration__row">
               {isLogin ? (
-                <div>
-                  Нет аккаунта?{" "}
-                  <NavLink to={REGISTRATION_ROUTE}>Зарегистрируйся!</NavLink>
-                </div>
+                <>
+                  <div>
+                    Нет аккаунта?{" "}
+                    <NavLink to={REGISTRATION_ROUTE}>Зарегистрируйся!</NavLink>
+                  </div>
+                  <div>
+                    Забыли пароль?{" "}
+                    <NavLink to={RESET_PASS_ROUTE}>Восстановить</NavLink>
+                  </div>
+                </>
               ) : (
                 <div>
                   Есть аккаунт? <NavLink to={LOGIN_ROUTE}>Войдите!</NavLink>
