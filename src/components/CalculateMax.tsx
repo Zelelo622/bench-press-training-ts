@@ -72,7 +72,7 @@ const CalculateMax: FC<ICalculateMaxProps> = ({
               />
             </div>
             <div className="calcMax__btns">
-              <button className="calcMax__btn btn" type="submit">
+              <button className="calcMax__btn butn" type="submit">
                 Рассчитать ПМ
               </button>
             </div>

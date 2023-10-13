@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap");
 
+* {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
 .loader {
   display: flex;
   justify-content: center;
@@ -13,7 +18,7 @@
   margin: 0 auto;
 }
 
-.btn {
+.butn {
   border: none;
   outline: none;
   padding: 4px 10px;
@@ -23,13 +28,21 @@
   transition: all 0.2s;
   color: #000;
 }
-.btn:hover {
+.butn:hover {
   opacity: 0.7;
 }
 
-.main {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
+.nav__wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.nav__link {
+  font-size: 14px;
+  transition: all 0.2s;
+}
+.nav__link:hover {
+  opacity: 0.7;
 }
 
 /* auth */
@@ -389,4 +402,3 @@ th {
     flex-flow: column;
   }
 }
-

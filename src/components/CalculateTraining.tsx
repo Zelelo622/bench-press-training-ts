@@ -41,7 +41,7 @@ const CalculateTraining: FC<ICalculateTraining> = ({ max, setMax }) => {
                 placeholder="кг"
               />
             </div>
-            <button className="calcTrain__btn btn" type="submit">
+            <button className="calcTrain__btn butn" type="submit">
               Показать план тренировки
             </button>
           </form>

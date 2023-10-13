@@ -1,8 +1,9 @@
 import { FC, useContext } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../config/FirebaseConfig";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
+  DIARY_ROUTE,
   HOME_ROUTE,
   LOGIN_ROUTE,
   REGISTRATION_ROUTE,
@@ -10,8 +11,7 @@ import {
 } from "../utils/consts";
 import { observer } from "mobx-react-lite";
 import { AppContext } from "../index";
-import { AppBar, Box, Button, Link, Toolbar, Typography } from "@mui/material";
-import { inherits } from "util";
+import { AppBar, Button, Box, Link, Toolbar, Typography } from "@mui/material";
 
 const Header: FC = observer(() => {
   const { user } = useContext(AppContext);
@@ -57,18 +57,31 @@ const Header: FC = observer(() => {
               </Typography>
             </Link>
             {user.isAuth && user.user ? (
-              <Button style={{ color: "#000" }} onClick={exit}>
-                Выйти
-              </Button>
-            ) : (
-              <div>
-                <Button
-                  style={{ color: "#000" }}
-                  onClick={() => navigate(LOGIN_ROUTE)}
+              <div className="nav__wrapper">
+                <Link
+                  className="nav__link"
+                  href={DIARY_ROUTE}
+                  color="#000"
+                  underline="none"
                 >
-                  Авторизация
+                  Дневник
+                </Link>
+                <Button
+                  style={{ color: "#000", marginLeft: 20 }}
+                  onClick={exit}
+                  variant="outlined"
+                >
+                  Выйти
                 </Button>
               </div>
+            ) : (
+              <Button
+                variant="outlined"
+                style={{ color: "#000" }}
+                onClick={() => navigate(LOGIN_ROUTE)}
+              >
+                Авторизация
+              </Button>
             )}
           </Toolbar>
         </AppBar>
