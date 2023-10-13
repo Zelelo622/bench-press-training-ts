@@ -9,7 +9,7 @@ const ForgotPassPage: FC = () => {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const emailVal = email;
     sendPasswordResetEmail(auth, emailVal)
@@ -30,10 +30,7 @@ const ForgotPassPage: FC = () => {
             Главная
           </NavLink>
           <div className="registration__title">Восстановление пароля</div>
-          <form
-            onSubmit={(e) => handleSubmit(e)}
-            className="registration__form"
-          >
+          <form className="registration__form">
             <input
               type="email"
               name="email"
@@ -47,6 +44,7 @@ const ForgotPassPage: FC = () => {
                 variant="contained"
                 color="success"
                 className="registration__btn registration__btn-forgot"
+                onClick={(e) => handleSubmit(e)}
               >
                 Сбросить
               </Button>

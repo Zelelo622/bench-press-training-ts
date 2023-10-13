@@ -328,14 +328,14 @@ th {
 
   table td {
     border-bottom: 1px solid #ddd;
-    display: block;
+    display: flex;
+    justify-content: space-between;
     font-size: 0.8em;
     text-align: right;
   }
 
   table td::before {
     content: attr(data-label);
-    float: left;
     font-weight: bold;
     text-transform: uppercase;
   }

@@ -23,7 +23,7 @@ const AuthPage: FC = observer(() => {
   const location = useLocation();
   const isLogin = location.pathname === LOGIN_ROUTE;
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (!isLogin) {
       createUserWithEmailAndPassword(auth, email, password)
@@ -52,14 +52,13 @@ const AuthPage: FC = observer(() => {
     <div className="registration">
       <div className="container">
         <div className="registration__card">
-          <NavLink to={HOME_ROUTE} className="link-back">Главная</NavLink>
+          <NavLink to={HOME_ROUTE} className="link-back">
+            Главная
+          </NavLink>
           <div className="registration__title">
             {isLogin ? "Авторизация" : "Регистрация"}
           </div>
-          <form
-            onSubmit={(e) => handleSubmit(e)}
-            className="registration__form"
-          >
+          <form className="registration__form">
             <div className="registration__inputWrap">
               <input
                 className="registration__input"
@@ -110,6 +109,7 @@ const AuthPage: FC = observer(() => {
                 variant="outlined"
                 color="success"
                 className="registration__btn"
+                onClick={(e) => handleSubmit(e)}
               >
                 {isLogin ? "Войти" : "Регистрация"}
               </Button>
