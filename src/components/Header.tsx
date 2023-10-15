@@ -38,6 +38,7 @@ const Header: FC = observer(() => {
     <div className="container">
       <Box sx={{ flexGrow: 1 }} mb="20px">
         <AppBar
+          className="header"
           style={{
             background: "transparent",
             boxShadow: "none",
@@ -45,14 +46,19 @@ const Header: FC = observer(() => {
           }}
           position="static"
         >
-          <Toolbar>
+          <Toolbar className="header__toolbar">
             <Link
+              className="nav__link nav__link-mr"
               href={HOME_ROUTE}
               color="#000"
               underline="none"
-              sx={{ flexGrow: 1 }}
+              // style={{ marginRight: "auto" }}
             >
-              <Typography variant="h6" component="div">
+              <Typography
+                className="header__title"
+                variant="h6"
+                component="div"
+              >
                 Тренировка по жиму лежа
               </Typography>
             </Link>

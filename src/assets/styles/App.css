@@ -45,6 +45,9 @@
   opacity: 0.7;
 }
 
+.nav__link-mr {
+  margin-right: auto !important;
+}
 /* auth */
 
 .link-back {
@@ -287,6 +290,14 @@ th {
   font-weight: 300;
 }
 
+.input-modal + .input-modal {
+  margin-top: 10px;
+}
+
+.header {
+  margin-bottom: 20px !important;
+}
+
 /* media */
 
 @media screen and (max-width: 750px) {
@@ -316,6 +327,34 @@ th {
 
   .calcMax__title {
     text-align: center;
+  }
+
+  .header__toolbar {
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  .nav__link-mr {
+    margin-right: 0 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .header__title {
+    font-size: 16px !important;
+  }
+
+  .workout__item {
+    flex-direction: column;
+  }
+
+  .workout__item-text {
+    border-bottom: 2px solid #858585;
+  }
+
+  .approache__item {
+    border-bottom: 1px solid #c4c4c4;
   }
 
   table {

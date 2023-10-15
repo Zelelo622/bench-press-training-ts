@@ -30,7 +30,7 @@ const HomePage: FC = () => {
   }, [weight, reps, max]);
 
   return (
-    <main className="main">
+    <>
       <div className="container">
         <h1 className="title">Тренировка по жиму лежа</h1>
       </div>
@@ -41,7 +41,7 @@ const HomePage: FC = () => {
         setReps={setReps}
       />
       <CalculateTraining max={max} setMax={setMax} />
-    </main>
+    </>
   );
 };
 
