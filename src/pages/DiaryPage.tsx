@@ -16,6 +16,12 @@ const DiaryPage: React.FC = () => {
     setOpenModal(false);
   };
 
+  const deleteWorkout = (workoutToDelete: IWorkout) => {
+    setWorkouts((prevWorkouts) =>
+      prevWorkouts.filter((workout) => workout !== workoutToDelete)
+    );
+  };
+
   return (
     <div className="container">
       <Button
@@ -28,7 +34,7 @@ const DiaryPage: React.FC = () => {
       </Button>
 
       <h2>Добавленные тренировки:</h2>
-      <WorkoutList workouts={workouts} />
+      <WorkoutList workouts={workouts} onDeleteWorkout={deleteWorkout} />
 
       <AddWorkoutModal
         open={openModal}
